@@ -1,5 +1,24 @@
 import { createStore } from 'redux';
 
+const toDoForm = document.getElementById('toDoForm');
+const toDoInput = document.getElementById('toDoTxt');
+const toDoUl = document.querySelector('.toDoList');
+
+const createToDo = (toDo) =>{
+  const li = document.createElement('li');
+  li.innerText = toDo;
+  toDoUl.appendChild(li);
+};
+
+const onSubmit = (e)=>{
+  e.preventDefault();
+  const toDo = input.value;
+  toDoInput.value = '';
+  createToDo(toDo);
+};
+
+toDoForm.addEventListener('submit', onSubmit);
+
 const add = document.getElementById('add');
 const minus = document.getElementById('minus');
 const number = document.querySelector('.number');
